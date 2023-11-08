@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BudgetBuddy</h1>
+    </header>
+    <main>
+        <section id="income-form">
+            <h2 class="label-style">Dodaj swoje wynagrodzenie:</h2>
+            <form>
+                <label for="income-amount">Kwota:</label>
+                <input type="number" id="income-amount" required>
+                <label for="income-currency">Waluta:</label>
+                <select id="income-currency">
+                    <option value="PLN">PLN - złoty</option>
+                    <option value="EUR">EUR - euro</option>
+                    <option value="USD">USD - dolar</option>
+                </select>
+                <input type="submit" value="Dodaj kwotę do głównego konta">
+            </form>
+        </section>
+        <section id="expense-form">
+            <form id="add-expense">
+                <label for="transaction-type" class="label-style">Rodzaj transakcji:</label>
+                <select id="transaction-type" name="transaction-type" required>
+                    <option value="wydatek">Wydatek</option>
+                    <option value="przychód">Przychód</option>
+                </select>
+                <label for="name">Nazwa operacji:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="amount">Kwota:</label>
+                <input type="number" id="amount" name="amount" required>
+                <label for="currency">Waluta:</label>
+                <select id="currency" name="currency" required>
+                    <option value="PLN">PLN - złoty</option>
+                    <option value="EUR">EUR - euro</option>
+                    <option value="USD">USD - dolar</option>
+                </select>
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" required>
+                <input type="submit" id="submit-button" value="Dodaj wydatek">
+            </form>
+        </section>
+        <section id="expense-list">
+            <h2 class="label-style">Twoje wydatki i przychody:</h2>
+            <label class="sort-size" for="sort-criterion">Sortuj wydatki i przychody według:</label>
+            <select id="sort-criterion">
+                <option value="name">Nazwa</option>
+                <option value="amount">Kwota</option>
+                <option value="date">Data</option>
+            </select>
+            <label class="sort-size" for="sort-direction">Kierunek sortowania:</label>
+            <select id="sort-direction">
+                <option value="ascending">Rosnąco</option>
+                <option value="descending">Malejąco</option>
+            </select>
+            <ul id="expenses">
+            </ul>
+        </section>
+        <section id="expense-stats">
+            <p id="total-expenses">Suma wydatków: 0</p>
+            <p id="total-income">Suma przychodów: 0</p>
+            <p id="main-balance" class="unique-style">Główne konto: 0</p>
+            <hr/>
+            <br/>
+            <label for="sort-criterion">Historia wynagrodzeń:</label>
+            <ul id="salary-history"></ul> 
+        </section>
+        <section id="footer">
+            <p>Copyright © 2023-2024 B.art</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
